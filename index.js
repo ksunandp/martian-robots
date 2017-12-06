@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const solveProblem = data => {
   let minCoords = [0, 0];
-  let maxCoords = data[0].split(/\s+/);
+  let maxCoords = data[0].split(/\s+/).map(coord => parseInt(coord) < 50 ? coord : 50);
   let cleanData = data.filter((line, i) => i !== 0 && line !== "");
   let lostRobots = [];
   let finishedRobots = [];
